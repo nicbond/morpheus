@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "titre": "Superbe maison 4 pièces",
+        "description": "Maison en bord de mer (moins d'1km) avec jardin 80m² !\nConstruction 1999 en brique avec un étage et un grenier. A 5min à pied du centre de Pénestin. Chauffage électrique, chauffe-eau neuf. Intérieur rénové l'année dernière.",
+        "prix": "300000",
+        "ville": "Pénestin",
+        "code_postal": "56760",
+        "surface": "150",
+        "pieces": "4",
+        "type": "Maison",
+        "categorie": "vente",
+        "photos": [
+            "https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo",
+            "https://i.picsum.photos/id/101/2621/1747.jpg?hmac=cu15YGotS0gIYdBbR1he5NtBLZAAY6aIY5AbORRAngs",
+            "https://i.picsum.photos/id/1038/3914/5863.jpg?hmac=SGtXryWDkn_eVQdA1NjYrikcsrIfcfS4SFYHo4lCpkQ",
+            "https://i.picsum.photos/id/1040/4496/3000.jpg?hmac=kvZONlBpTcZ16PuE_g2RWxlicQ5JKVq2lqqZndfafBY",
+            "https://i.picsum.photos/id/1054/3079/1733.jpg?hmac=Rk5_Xt3oLlDLJHH3ZDyHCqua0s45mhNjXmID277ZOMI",
+            "https://i.picsum.photos/id/1059/7360/4912.jpg?hmac=vVWk1qyiXN_VgPhpNqFm3yl2HUPW6fHqYOjTHYO2bHQ",
+            "https://i.picsum.photos/id/116/3504/2336.jpg?hmac=C46vgpj3R407e8pCyy8NhIsNaBZCjb4r5d71keNgMJY",
+            "https://i.picsum.photos/id/119/3264/2176.jpg?hmac=PYRYBOGQhlUm6wS94EkpN8dTIC7-2GniC3pqOt6CpNU",
+            "https://i.picsum.photos/id/142/4272/2848.jpg?hmac=z8IS_an6FQ8ijJOBd-wSVg1JTZbeIDG4TbjHwLQbs0I",
+            "https://i.picsum.photos/id/162/1500/998.jpg?hmac=j-Xr1aKHzCJQigPBLF0nKTudXM2w9u1-Smxlam0YOt8",
+            "https://i.picsum.photos/id/188/2896/1936.jpg?hmac=tKGI_u_jJ-s7wzHbJibhbflqi57bIpH9g7FJXnTfJao"
+        ]
+    },
+    {
+        "id": 2,
+        "titre": "Loue T1 dans le 10e arrondissement",
+        "description": "Beau T1 proche gare de l'est, orienté sud-ouest au 4ème étage sans ascenceur. Pour travailleur ou étudiant.\nVisite à partir de 18h en semaine. Caution de 2000€ et garants obligatoire. Bail de 10 mois minimum.",
+        "prix": "1500",
+        "ville": "Paris",
+        "code_postal": "75010",
+        "surface": "35",
+        "pieces": "1",
+        "type": "Appartement",
+        "categorie": "location",
+        "photos": [
+            "https://i.picsum.photos/id/212/2000/1394.jpg?hmac=5mJ6tJgbGO0Wl1jBHXsiOQQYq-bRf47wLE9vmXjcEuU",
+            "https://i.picsum.photos/id/2/5616/3744.jpg?hmac=l1XcSPFigtRLcO2F6Li-t17EIeylkWH94Oowb4vzApk"
+        ]
+    }
+]
