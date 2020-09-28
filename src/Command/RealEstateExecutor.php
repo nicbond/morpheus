@@ -29,12 +29,10 @@ class RealEstateExecutor extends Command
 
         $formatted_ads = [];
         $ads           = JsonConverter::jsonToArray($filepath);
-        var_dump($ads);die;
 
         foreach ($ads as $ad) {
-            // format and send ads
-            formatAd();
-            send();
+            RealEstateHook::formatAd($ad);
+            //send();
         }
 
         print_r($formatted_ads);
