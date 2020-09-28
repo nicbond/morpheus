@@ -7,6 +7,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use App\Converter\JsonConverter;
 
 class RealEstateExecutor extends Command
 {
@@ -25,10 +26,10 @@ class RealEstateExecutor extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $filepath = $this->params->get('jsonFile');
-        var_dump($filepath);die;
 
         $formatted_ads = [];
         $ads           = JsonConverter::jsonToArray($filepath);
+        var_dump($ads);die;
 
         foreach ($ads as $ad) {
             // format and send ads
