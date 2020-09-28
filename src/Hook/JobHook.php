@@ -1,6 +1,8 @@
 <?php
-// src/Hook/JobHook.php
+
 namespace App\Hook;
+
+use Vicopo\Vicopo;
 
 class JobHook
 {
@@ -31,6 +33,25 @@ class JobHook
         }
 
         $formatted_ad['images'] = $ad['pictures'];
+
+//***************************************BONUS***********************************************//
+        $i = 0;
+        $location_state = $ad['location_state'];
+
+        $vicopoUrl = 'http://vicopo.selfbuild.fr/city/' . urlencode($formatted_ad['city']);
+        $json = @json_decode(file_get_contents($vicopoUrl), true);
+
+        $city = strtoupper($ad['location_city']);
+        $size = count($json['cities']);
+
+        for($i=0; $i < $size; $i++) {
+            $jsonCity = $json['cities'][$i]['city'];
+            $code_postal = substr($json['cities'][$i]['code'], 0, 2); 
+            if ($city == $jsonCity && $location_state == $code_postal) {
+                $formatted_ad['zip_code'] = $json['cities'][$i]['code'];
+                break;
+            }
+        }
 
         return $formatted_ad;
     }
