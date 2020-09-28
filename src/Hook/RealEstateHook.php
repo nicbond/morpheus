@@ -47,7 +47,7 @@ class RealEstateHook
         return $formatted_ad;
     }
 
-    public function replaceAccentCharacters($str, $encoding='utf-8')
+    public function replaceAccentCharacters($str, $encoding='utf-8'): string
     {
         // transformer les caractères accentués en entités HTML
         $formatedStr = htmlentities($str, ENT_NOQUOTES, $encoding);
