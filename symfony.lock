@@ -1,4 +1,7 @@
 {
+    "kylekatarnls/vicopo": {
+        "version": "1.2.1"
+    },
     "php": {
         "version": "7.4"
     },
