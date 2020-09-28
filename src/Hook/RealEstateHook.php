@@ -11,6 +11,7 @@ class RealEstateHook
         $formatted_ad['id'] = $ad['id'];
         $formatted_ad['title'] = $ad['titre'];
         $formatted_ad['body'] = $ad['description'];
+        //$formatted_ad['body'] = self::replaceAccentCharacters($formatted_ad['body'], $encoding='utf-8');
 
         $formatted_ad['vertical'] = 'Immobilier'; // Le PDF nous indique que le fichier JSON est un fichier d’annonces immobilière: je force donc le enum vertical à Immobilier.
 
@@ -43,7 +44,25 @@ class RealEstateHook
             $formatted_ad['images'] = $ad['photos'];
         }
 
-        var_dump($formatted_ad);die;
         return $formatted_ad;
+    }
+
+    public function replaceAccentCharacters($str, $encoding='utf-8')
+    {
+        // transformer les caractères accentués en entités HTML
+        $formatedStr = htmlentities($str, ENT_NOQUOTES, $encoding);
+
+        // remplacer les entités HTML pour avoir juste le premier caractères non accentués
+        // Exemple : "&ecute;" => "e", "&Ecute;" => "E", "à" => "a" ...
+        $formatedStr = preg_replace('#&([A-za-z])(?:acute|grave|cedil|circ|orn|ring|slash|th|tilde|uml);#', '\1', $formatedStr);
+
+        // Remplacer les ligatures tel que : , Æ ...
+        // Exemple "œ" => "oe"
+        $formatedStr = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $formatedStr);
+
+        // Supprimer tout le reste
+        $formatedStr = preg_replace('#&[^;]+;#', '', $formatedStr);
+
+        return $formatedStr;
     }
 }
