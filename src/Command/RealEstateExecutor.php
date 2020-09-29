@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use App\Converter\JsonConverter;
+use App\Validator\Api;
 
 class RealEstateExecutor extends Command
 {
@@ -31,8 +32,9 @@ class RealEstateExecutor extends Command
         $ads           = JsonConverter::jsonToArray($filepath);
 
         foreach ($ads as $ad) {
-            RealEstateHook::formatAd($ad);
-            //send();
+            $formatted_ad = RealEstateHook::formatAd($ad);
+            $vertical = $formatted_ad['vertical'];
+            Api::send($formatted_ad, $vertical);
         }
 
         print_r($formatted_ads);

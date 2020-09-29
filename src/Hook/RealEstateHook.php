@@ -13,9 +13,9 @@ class RealEstateHook
         $formatted_ad['body'] = $ad['description'];
         //$formatted_ad['body'] = self::replaceAccentCharacters($formatted_ad['body'], $encoding='utf-8');
 
-        $formatted_ad['vertical'] = 'Immobilier'; // Le PDF nous indique que le fichier JSON est un fichier d’annonces immobilière: je force donc le enum vertical à Immobilier.
+        $formatted_ad['vertical'] = 'real_estate'; //C'est pas clair du tout !
 
-        $formatted_ad['price'] = $ad['prix'];
+        $formatted_ad['price'] = intval($ad['prix']);
         $formatted_ad['category'] = $ad['categorie'];
 
         if ($formatted_ad['category'] == 'vente') {
