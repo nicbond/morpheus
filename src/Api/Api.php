@@ -27,7 +27,7 @@ class Api
 
             'body' => new Assert\Required([
                 new Assert\Type('string'),
-                new Assert\Length(['max' => 500]),
+                new Assert\Length(['max' => 800]),
                 new Assert\NotBlank(),
             ]),
 
