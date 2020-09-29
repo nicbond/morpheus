@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use App\Converter\XMLConverter;
+use App\Validator\Api;
 
 class JobExecutor extends Command
 {
@@ -27,17 +28,15 @@ class JobExecutor extends Command
     {
         $filepath = $this->params->get('xmlFile');
 
-        $formatted_ads = [];
         $ads           = XMLConverter::xmlToArray($filepath);
 
         foreach ($ads as $ad) {
             foreach ($ad as $data) {
-                JobHook::formatAd($data);
-                send();
+                $formatted_ad = JobHook::formatAd($data);
+                $vertical = $formatted_ad['vertical'];
+                Api::send($formatted_ad, $vertical);
             }
         }
-
-        print_r($formatted_ads);
 
         return 0;
     }

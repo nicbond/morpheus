@@ -28,7 +28,6 @@ class RealEstateExecutor extends Command
     {
         $filepath = $this->params->get('jsonFile');
 
-        $formatted_ads = [];
         $ads           = JsonConverter::jsonToArray($filepath);
 
         foreach ($ads as $ad) {
@@ -36,8 +35,6 @@ class RealEstateExecutor extends Command
             $vertical = $formatted_ad['vertical'];
             Api::send($formatted_ad, $vertical);
         }
-
-        print_r($formatted_ads);
 
         return 0;
     }
