@@ -9,6 +9,8 @@ class Api
 {
     public static function send(array $input, string $vertical): void
     {
+        var_dump('JE PASSE DANS LE SEND AVEC LES DONNEES SUIVANTES:');
+        var_dump($input);
         if (!in_array($vertical, ['real_estate', 'job'])) {
             die("Wrong vertical: {$vertical}");
         }
