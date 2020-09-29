@@ -11,8 +11,8 @@ class XMLConverter
         // Read entire file into string
         $xmlfile = file_get_contents($filepath);
 
-        $base = array('<ul>', '</ul>', '<li>', '</li>', '<strong>', '</strong>');
-        $replace = array('', '', '\t', '', '', '');
+        $base = array('<ul>', '</ul>', '<li>', '</li>', '<strong>', '</strong>', '<p>', '</p>');
+        $replace = array('', '', '\t', '', '', '', '', '');
         $xmlfile = str_replace($base, $replace, $xmlfile);
         $xmlfile = str_replace('<br />', '\n', $xmlfile);
 
